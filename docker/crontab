@@ -1,0 +1,3 @@
+* * * * * /Preco/src/main/script/routerguni-watchdog.sh 2>/Preco/src/main/script/routerguni-watchdog.log
+34 * * * * /Preco/src/main/script/health-report-watchdog.sh
+
