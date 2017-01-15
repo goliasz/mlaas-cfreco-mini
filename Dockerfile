@@ -10,6 +10,9 @@ RUN echo "deb http://ftp.debian.org/debian jessie-backports main" | tee -a /etc/
 RUN apt-get update
 RUN apt-get -y install openjdk-8-jdk
 
+# Pip
+RUN apt-get -y install python-pip
+
 # Memcached
 #RUN apt-get update
 RUN apt-get -y install memcached
