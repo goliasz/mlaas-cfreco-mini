@@ -37,7 +37,8 @@ RUN crontab /app/crontab
 # Project env and files
 ENV PROJECT_HOME /Preco
 RUN mkdir /Preco
-COPY src /Preco
+COPY src /Preco/
+COPY README.md /Preco/
 RUN chmod u+x /Preco/src/main/script/autostart.sh
 
 ENTRYPOINT ["/Preco/src/main/script/autostart.sh"]
