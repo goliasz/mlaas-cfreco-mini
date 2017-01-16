@@ -1,4 +1,5 @@
-[![](https://images.microbadger.com/badges/image/goliasz/mlaas-cfreco-mini.svg)](https://microbadger.com/images/goliasz/mlaas-cfreco-mini "Fast in memory item-item recommendation engine")
+[![](https://images.microbadger.com/badges/image/goliasz/mlaas-cfreco-mini.svg)](https://microbadger.com/images/goliasz/mlaas-cfreco-mini "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/goliasz/mlaas-cfreco-mini.svg)](https://microbadger.com/images/goliasz/mlaas-cfreco-mini "Get your own version badge on microbadger.com")
 
 # mlaas-cfreco-mini
 
