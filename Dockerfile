@@ -34,15 +34,10 @@ RUN apt-get -y install cron
 ADD docker/crontab /app/crontab
 RUN crontab /app/crontab
 
-
 # Project env and files
 ENV PROJECT_HOME /Preco
 RUN mkdir /Preco
-
-
-
-
-
-
+COPY src /Preco
+RUN chmod u+x /Preco/src/main/script/autostart.sh
 
 ENTRYPOINT ["/Preco/src/main/script/autostart.sh"]
