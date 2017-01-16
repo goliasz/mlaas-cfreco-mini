@@ -48,3 +48,17 @@ COPY README.md /Preco/
 RUN chmod u+x /Preco/src/main/script/autostart.sh
 
 ENTRYPOINT ["/Preco/src/main/script/autostart.sh"]
+
+# Build-time metadata as defined at http://label-schema.org
+ARG BUILD_DATE
+ARG VCS_REF
+ARG VERSION
+LABEL org.label-schema.build-date=$BUILD_DATE \
+      org.label-schema.name="mlaas-cfreco-mini" \
+      org.label-schema.description="Fast in memory item-item recommendation engine" \
+      org.label-schema.url="http://kolibero.eu" \
+      org.label-schema.vcs-ref=$VCS_REF \
+      org.label-schema.vcs-url="https://github.com/goliasz/mlaas-cfreco-mini" \
+      org.label-schema.vendor="KOLIBERO" \
+      org.label-schema.version=$VERSION \
+      org.label-schema.schema-version="1.0"
