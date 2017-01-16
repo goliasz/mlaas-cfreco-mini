@@ -24,7 +24,11 @@ RUN pip install gunicorn
 RUN apt-get -y install build-essential
 RUN apt-get -y install tcl8.5
 RUN curl -sL --retry 3 http://download.redis.io/releases/redis-stable.tar.gz > redis-stable.tar.gz
-RUN tar xzf redis-stable.tar.gz && cd redis-stable/ && make && make test && make install && cd utils && ./install_server.sh
+RUN tar xzf redis-stable.tar.gz && cd redis-stable/ && make
+#RUN pwd 
+RUN cd redis-stable && make test
+RUN cd redis-stable && make install 
+RUN cd redis-stable && cd utils && ./install_server.sh
 
 # CF_RECOMMENDER
 RUN pip install cf_recommender
@@ -37,8 +41,10 @@ RUN crontab /app/crontab
 # Project env and files
 ENV PROJECT_HOME /Preco
 RUN mkdir /Preco
-COPY src /Preco/
+RUN mkdir /Preco/src
+COPY src /Preco/src/
 COPY README.md /Preco/
+#RUN ls /Preco
 RUN chmod u+x /Preco/src/main/script/autostart.sh
 
 ENTRYPOINT ["/Preco/src/main/script/autostart.sh"]
