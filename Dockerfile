@@ -47,6 +47,10 @@ COPY README.md /Preco/
 #RUN ls /Preco
 RUN chmod u+x /Preco/src/main/script/autostart.sh
 
+# Flask
+RUN apt-get -y install python-dev
+RUN pip install Flask
+
 ENTRYPOINT ["/Preco/src/main/script/autostart.sh"]
 
 # Build-time metadata as defined at http://label-schema.org
