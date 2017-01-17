@@ -13,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-rm /var/run/redis_*.pid
+#rm /var/run/redis_*.pid
 service redis_6379 start
-
 cron &
 memcached -u www-data &
 
