@@ -19,4 +19,6 @@ service redis_6379 start
 cron &
 memcached -u www-data &
 
+sleep(5)
+
 /Preco/src/main/script/routerguni-watchdog.sh
