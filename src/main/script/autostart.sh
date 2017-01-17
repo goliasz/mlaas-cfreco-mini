@@ -13,7 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-#rm /var/run/redis_*.pid
+if [ -f "/var/run/redis_*.pid" ]
+then
+  rm /var/run/redis_*.pid
+fi
+
 service redis_6379 start
 cron &
 memcached -u www-data &
