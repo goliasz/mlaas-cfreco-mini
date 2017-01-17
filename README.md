@@ -8,16 +8,24 @@ Fast in memory item-item recommendation engine based on https://pypi.python.org/
 # Container Startup
 
 ```
-$ docker run -itd --name=cfreco --hostname=cfreco -p 0.0.0.0:5000:5000 goliasz/mlaas-cfreco-mini
+$ docker run -d --name=cfreco --hostname=cfreco -p 0.0.0.0:5000:5000 goliasz/mlaas-cfreco-mini
 ```
 
 # Training
 
-TODO
+```
+$ docker exec -it cfreco bash
+# cd Preco/
+# python src/main/python/train.py --src=data/courseInfo_with_cookie.json --recourl=http://localhost:5000/api/v1.0/router
+```
 
 # Query
 
-TODO
+```
+$ docker exec -it cfreco bash
+# cd Preco/
+# python src/main/python/query.py --recourl=http://localhost:5000/api/v1.0/router --items=2
+```
 
 # License
 Apache License, Version 2.0
