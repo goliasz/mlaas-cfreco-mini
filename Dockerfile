@@ -33,6 +33,10 @@ RUN cd redis-stable && cd utils && ./install_server.sh
 # CF_RECOMMENDER
 RUN pip install cf_recommender
 
+# Flask
+RUN apt-get -y install python-dev
+RUN pip install Flask
+
 # Cron
 RUN apt-get -y install cron
 ADD docker/crontab /app/crontab
@@ -46,10 +50,6 @@ COPY src /Preco/src/
 COPY README.md /Preco/
 #RUN ls /Preco
 RUN chmod u+x /Preco/src/main/script/autostart.sh
-
-# Flask
-RUN apt-get -y install python-dev
-RUN pip install Flask
 
 ENTRYPOINT ["/Preco/src/main/script/autostart.sh"]
 
