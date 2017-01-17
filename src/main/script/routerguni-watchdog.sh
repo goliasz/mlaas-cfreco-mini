@@ -21,5 +21,5 @@ if [[ $(pgrep -f '/bin/bash src/main/script/routerguni.sh') ]]; then
 else
    echo $prog+" not running, so I must do something";
    # Make live again
-   cd $base&&$prog &
+   cd $base&&$prog
 fi

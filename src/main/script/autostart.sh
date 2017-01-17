@@ -17,10 +17,6 @@ rm /var/run/redis_*.pid
 service redis_6379 start
 
 cron &
-
-#/usr/bin/mysqld_safe &
-
 memcached -u www-data &
 
-/bin/bash
-
+/Preco/src/main/script/routerguni-watchdog.sh
