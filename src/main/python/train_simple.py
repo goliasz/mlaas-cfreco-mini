@@ -38,7 +38,7 @@ def train():
 
 if __name__ == '__main__':
   parser = argparse.ArgumentParser(description="Training file preprocessor")
-  parser.add_argument('--input', default="data/training_data.json")
+  parser.add_argument('--input', default="data/sample_training.json")
   parser.add_argument('--recourl', default="http://localhost:5000/api/v1.0/router")
 
   args = parser.parse_args()

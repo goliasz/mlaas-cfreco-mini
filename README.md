@@ -17,6 +17,11 @@ $ docker run -d --name=cfreco --hostname=cfreco -p 0.0.0.0:5000:5000 goliasz/mla
 $ docker exec -it cfreco bash
 # python /Preco/src/main/python/train.py --src=/Preco/data/courseInfo_with_cookie.json --recourl=http://localhost:5000/api/v1.0/router
 ```
+## Simple Training Script
+
+```
+# python /Preco/src/main/python/train_simple.py --input=/Preco/data/sample_training.json --recourl=http://localhost:5000/api/v1.0/router
+```
 
 # Query
 
