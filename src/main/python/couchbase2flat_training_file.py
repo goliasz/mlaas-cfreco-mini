@@ -32,7 +32,7 @@ def create_grouped_array(p_flat_arr):
   for row in p_flat_arr:
     userid = str(row.get("userid"))
     timebucket = str(row.get("timebucket"))
-    itemid = str(row.get("itemid"))
+    itemid = str(row.get("itemid").encode("utf-8"))
     group = grouped.get(userid+timebucket)
     if not group:
       group = {"user_id":userid,"items":[itemid]}
@@ -60,5 +60,12 @@ if __name__ == '__main__':
   print "Flat array created..."
   grouped_data = create_grouped_array(flat_data)
   print "Grouped array created... saving to output file"
+  counter = 0
   for i in grouped_data.items():
-    print i
+    #print i[1]
+    counter += 1
+    with open(args.output, 'a') as the_file:
+      the_file.write(json.dumps(i[1])+"\n")
+    if counter % 1000 == 0:
+      print counter
+  print "Finished..."
